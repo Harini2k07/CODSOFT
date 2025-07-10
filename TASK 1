@@ -1,0 +1,39 @@
+def chatbot():
+    print("Hi! I'm ChatSimple. Ask me anything (type 'bye' to exit).")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        # Exit condition
+        if "bye" in user_input:
+            print("ChatSimple: Goodbye! Have a great day!")
+            break
+
+        # Greeting
+        elif "hello" in user_input or "hi" in user_input:
+            print("ChatSimple: Hello there! How can I help you today?")
+
+        # Asking about the bot
+        elif "your name" in user_input:
+            print("ChatSimple: I'm ChatSimple, your basic rule-based chatbot.")
+
+        # Time-related question
+        elif "time" in user_input:
+            from datetime import datetime
+            now = datetime.now()
+            print(f"ChatSimple: The current time is {now.strftime('%H:%M')}.")
+
+        # Weather question (static answer)
+        elif "weather" in user_input:
+            print("ChatSimple: I don't have live data, but I hope it's sunny!")
+
+        # General thanks
+        elif "thank" in user_input:
+            print("ChatSimple: You're welcome!")
+
+        # Unrecognized input
+        else:
+            print("ChatSimple: Sorry, I didn't understand that. Can you rephrase?")
+
+# Run the chatbot
+chatbot()
